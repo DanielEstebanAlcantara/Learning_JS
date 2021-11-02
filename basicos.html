@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FUndamentos JavaScript</title>
+    <style>
+      body {
+        background-color: black;
+        color: aliceblue;
+      }
+      h1 {
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fundamentos de JS</h1>
+    <ul>
+      <li>Primavera</li>
+      <li>Verano</li>
+      <li>Otoño</li>
+      <li>Invierno</li>
+    </ul>
+    <script>
+      var hola = "Wello Word";
+      let hello = "Hola mundo";
+      const PI = 3.14159;
+      console.log(hola);
+      console.log(hello);
+      console.log(PI);
+
+      console.log("*************** var *************");
+      var musica = "Rock";
+      console.log("Valor de la variable musica antes del bloque: ", musica);
+      {
+        var musica = "Pop";
+        console.log("Valor de la variable musica en el bloque: ", musica);
+      }
+      console.log("Valor de la variable musica después del bloque: ", musica);
+
+      console.log("*************** let *************");
+
+      let musica2 = "Rock";
+      console.log("Valor de la variable musica2 antes del bloque: ", musica2);
+      {
+        let musica2 = "Pop";
+        console.log("Valor de la variable musica2 en el bloque: ", musica2);
+      }
+      console.log("Valor de la variable musica2 después del bloque: ", musica2);
+
+      //Cadenas de Texto
+      let nombre = "Esteban";
+      let apellido = "Alcantara";
+      let saludo = new String("Hola, como estan?");
+
+      console.log(nombre, apellido, saludo);
+      console.log(
+        nombre.length,
+        apellido.length,
+        saludo.length,
+        nombre.toUpperCase(),
+        apellido.toLowerCase(),
+        saludo.includes("como"),
+        saludo.trim(),
+        saludo.split("."),
+        saludo.split(",")
+      );
+
+      //Concatenación:
+
+      let name = "Daniel Estebam";
+      let lastName = "Alcantara Paleo";
+
+      let fullName = name + ", " + lastName;
+      console.log(fullName);
+
+      //Interpoación de variables
+
+      let fullName2 = `Hello my name is ${name} and my lastname is ${lastName}`;
+      console.log(fullName2);
+
+      let ul = `
+    <ul>
+      <li>Primavera</li>
+      <li>Verano</li>
+      <li>Otoño</li>
+      <li>Invierno</li>
+    </ul>
+      `;
+
+      console.log(ul);
+
+      //Number
+      let a = 1;
+      let b = new Number(8);
+      let c = 6.15;
+      let d = "5.6";
+
+      console.log(a, b);
+      console.log(c);
+      console.log(c.toFixed(1));
+      console.log(parseInt(c));
+      console.log(parseFloat(c));
+
+      console.log(typeof c, typeof d);
+      console.log(c + parseInt(d));
+
+      //Boolena
+      let verdad = true;
+      let falso = false;
+
+      console.log(verdad, falso);
+      console.log(typeof verdad, typeof falso);
+      console.log(Boolean(0));
+      console.log(Boolean(-7));
+      console.log(Boolean(""));
+      console.log(Boolean(" "));
+
+      //undefined, null
+      let indefinida;
+      console.log(indefinida);
+
+      let nulo = null;
+      console.log(nulo);
+
+      //   NaN
+      let noEsUnNumero = "hola" * 2;
+      console.log(noEsUnNumero);
+
+      //   Funciones
+      //Declaración
+      function nombreDeLaFuncion() {
+        console.log("Uno");
+        console.log("DOs");
+        console.log("Tres");
+        return "La funcion retorna una cadena de texto";
+      }
+      //   Invocaión
+      nombreDeLaFuncion();
+      let valorFuncion = nombreDeLaFuncion();
+      console.log(valorFuncion);
+
+      //   Aceptar parámetros
+      function sayHi(name = "None", age = "0") {
+        console.log(`Hi, my name is ${name} and I'm ${age} years old`);
+      }
+
+      sayHi("Javier", "1");
+      sayHi();
+
+      //Función Expresada
+      //Función anónima
+      const funcionExpresada = function () {
+        console.log("ESta es una función expresada");
+      };
+
+      funcionExpresada();
+    </script>
+  </body>
+</html>
