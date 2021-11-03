@@ -82,13 +82,13 @@
       console.log(fullName2);
 
       let ul = `
-    <ul>
-      <li>Primavera</li>
-      <li>Verano</li>
-      <li>Otoño</li>
-      <li>Invierno</li>
-    </ul>
-      `;
+      <ul>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+      </ul>
+        `;
 
       console.log(ul);
 
@@ -155,8 +155,76 @@
       const funcionExpresada = function () {
         console.log("ESta es una función expresada");
       };
-      //delete
       funcionExpresada();
+
+      //Arreglos
+      const arr = [];
+      const arr2 = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
+      console.log(arr);
+      console.log(arr2);
+      console.log(arr.length);
+      console.log(arr2[2]);
+      console.log(arr2[3][2]);
+      console.log(arr2[3][3][1]);
+
+      const arr3 = Array.of("X", "Z", "Y", 9, 8, 7);
+      console.log(arr3);
+
+      const arr4 = Array(100).fill(0);
+      console.log(arr4);
+
+      const colors = ["Red", "Green", "Blue"];
+      console.log(colors);
+
+      colors.push("Black");
+      console.log(colors);
+
+      colors.pop();
+      console.log(colors);
+
+      colors.forEach(function (el, i) {
+        console.log(`<li id="${i}">${el}</i>`);
+      });
+
+      //   Objetos
+      const obj = {};
+      console.log(obj);
+
+      const obj1 = {
+        nombre: "Esteban",
+        apellido: "Alcantara",
+        edad: 20,
+        hobbies: ["code", "videojuegos", "musica"],
+        vivo: true,
+        contacto: {
+          email: "danideap1@gmail.com",
+          ig: "@devesteban.js",
+          telefono: "555555555",
+        },
+        saludar: function () {
+          console.log(`Hola`);
+        },
+
+        decirNombre: function () {
+          console.log(
+            `Hola mi nombre es ${this.nombre} y mi pueden seguir en instagram como ${this.contacto.ig} `
+          );
+        },
+      };
+
+      console.log(obj1);
+
+      console.log(obj1["nombre"]);
+      console.log(obj1.edad);
+      obj1.saludar();
+      console.log(obj1.contacto);
+      console.log(obj1.contacto.ig);
+
+      obj1.decirNombre();
+
+      console.log(Object.keys(obj1));
+      console.log(Object.values(obj1));
+      console.log(obj1.hasOwnProperty("nacimiento"));
     </script>
   </body>
 </html>
