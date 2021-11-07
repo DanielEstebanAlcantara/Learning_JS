@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>Esta es una calculadora simple</h1>
+    <script>
+      let sum = 0,
+        rest = 0,
+        mult = 1,
+        div = 1;
+
+      let numeros = [1, 2, 3, 4, 5, 6, 7, 8];
+
+      numeros.forEach((numero, i) => (sum += numero));
+      console.log(`Suma de ${numeros}  = ${sum}`);
+
+      numeros.forEach((numero, i) => (rest -= numero));
+      console.log(`Resta de ${numeros}  = ${rest}`);
+
+      numeros.forEach((numero, i) => (mult *= numero));
+      console.log(`Multiplicación de ${numeros}  = ${mult}`);
+
+      numeros.forEach((numero, i) => (div /= numero));
+      console.log(`División de ${numeros}  = ${div}`);
+    </script>
+  </body>
+</html>
