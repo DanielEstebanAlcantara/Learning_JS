@@ -24,7 +24,7 @@
       <li>Invierno</li>
     </ul>
     <script>
-      var hola = "Wello Word";
+      var hola = "Wello World";
       let hello = "Hola mundo";
       const PI = 3.14159;
       console.log(hola);
@@ -82,13 +82,13 @@
       console.log(fullName2);
 
       let ul = `
-      <ul>
-        <li>Primavera</li>
-        <li>Verano</li>
-        <li>Otoño</li>
-        <li>Invierno</li>
-      </ul>
-        `;
+       <ul>
+         <li>Primavera</li>
+         <li>Verano</li>
+         <li>Otoño</li>
+         <li>Invierno</li>
+       </ul>
+         `;
 
       console.log(ul);
 
@@ -225,6 +225,336 @@
       console.log(Object.keys(obj1));
       console.log(Object.values(obj1));
       console.log(obj1.hasOwnProperty("nacimiento"));
+
+      //Operadores
+      let op = 5 % 3;
+      console.log(a);
+      let i = 2;
+
+      let modulo = 5 % 2;
+
+      console.log(a);
+      console.log(modulo);
+
+      console.log(8 > 9);
+      console.log(9 > 8);
+      console.log(8 >= 9);
+      console.log(9 >= 8);
+      console.log(7 < 7);
+      console.log(7 <= 7);
+
+      console.log(7 == 7);
+      console.log("7" == 7);
+      console.log(0 == false);
+
+      console.log(7 === 7);
+      console.log("7" === 7);
+      console.log(0 === false);
+
+      console.log(i++);
+      console.log(++i);
+
+      i = i + 2;
+      i *= 3;
+      i--;
+      ++i;
+      --i;
+      console.log(i);
+
+      console.log(!true);
+      console.log(!false);
+      console.log(9 === 9 || "9" === 9);
+      console.log(9 === 9 && "9" === 9);
+      console.log(9 === 9 && "9" === "9");
+
+      // if-esle
+
+      let edadif = 19;
+
+      if (edadif >= 18) {
+        console.log("Eres mayor de edad");
+      } else {
+        console.log("Eres menor de edad");
+      }
+
+      // if-else if-else
+      let hora = 2;
+      if (hora >= 0 && hora <= 5) {
+        console.log("Déjame dormir");
+      } else if (hora >= 6 && hora <= 11) {
+        console.log("Buenas dias");
+      } else if (hora >= 12 && hora <= 18) {
+        console.log("Buenas tardes");
+      } else {
+        console.log("Buenas noches");
+      }
+
+      //Operador ternario (condicion) ? verdadero falso
+
+      let edad_OT = 1;
+      let mayoriaEdad =
+        edad_OT >= 18 ? "Eres mayor de edad" : "Eres ilegal bro";
+      console.log(mayoriaEdad);
+
+      //switch-case
+
+      //0 Domingo
+      //.
+      //.
+      //.
+      //6 Sábado
+
+      let dia = 1;
+      switch (dia) {
+        case 0:
+          console.log("Domingo");
+          break;
+        case 1:
+          console.log("Lunes");
+          break;
+        case 2:
+          console.log("Martes");
+          break;
+        case 3:
+          console.log("Miercoles");
+          break;
+        case 4:
+          console.log("Jueves");
+          break;
+        case 5:
+          console.log("Viernes");
+          break;
+        case 6:
+          console.log("Sábado");
+          break;
+        default:
+          console.log("El día no existe");
+          break;
+      }
+
+      // Loops
+
+      let contador = 0;
+
+      //while
+
+      while (contador < 10) {
+        console.log("While: " + (contador + 1));
+        contador++;
+      }
+      contador = 0;
+      do {
+        console.log("do-while: " + (contador + 1));
+        contador++;
+      } while (contador < 10);
+
+      //for
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+      }
+
+      let num = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+      for (let i = 0; i < num.length; i++) {
+        console.log(num[i]);
+      }
+
+      //for in
+      const DEAP = {
+        name2: "Esteban",
+        lastName2: "Alcantara",
+        age2: 35,
+      };
+
+      for (const key in DEAP) {
+        console.log(`Key: ${key}, Value: ${DEAP[key]}`);
+      }
+
+      //for-of
+      let num2 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      for (const elemento of num2) {
+        console.log(elemento);
+      }
+
+      let cadena2 = "Daniel Esteban Alcantara";
+      for (const elemento of cadena2) {
+        console.log(elemento);
+      }
+
+      //Manejo de errores
+
+      try {
+        console.log("En el try se agrga el código a evaluar");
+        noExites;
+        console.log("Segundo mensaje del try");
+      } catch (error) {
+        console.log(
+          "Catch captura cualquier error susrgido o lanxado en el try"
+        );
+        console.log(error);
+      } finally {
+        console.log(
+          "En el bloque finally se ejecutará siempre al final de un bloque"
+        );
+      }
+      //Persoanlizar
+
+      try {
+        let numero3 = "g";
+        if (isNaN(numero3)) {
+          throw new Error("El caracter introducido no es un número");
+        }
+        console.log(numero3 * numero3);
+      } catch (error) {
+        console.log(`Se produjo el siguiente error : ${error}`);
+      }
+
+      // break & continue
+
+      const numeros5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      for (let i = 0; i < numeros5.length; i++) {
+        if (i === 5) {
+          break;
+        }
+        console.log(numeros5[i]);
+      }
+
+      for (let i = 0; i < numeros5.length; i++) {
+        if (i === 5) {
+          continue;
+        }
+        console.log(numeros5[i]);
+      }
+
+      //Destructuración
+      const numeros6 = [1, 2, 3];
+
+      //Sin usar destructuración
+      let uno = numeros6[0],
+        dos = numeros6[1],
+        tres = numeros6[2];
+
+      console.log(uno, dos, tres);
+
+      //Con destructuración
+
+      const [one, two, three] = numeros6;
+      console.log(one, two, three);
+
+      //En objetos
+      const person = {
+        name: "Esteban",
+        lastname: "Alcánatara",
+        age: 20,
+      };
+
+      let { name, age, lastname } = person;
+      console.log(name, lastname, age);
+
+      let name3 = "Javier",
+        edad3 = 1;
+
+      const gato = {
+        name3: name3,
+        edad3: edad3,
+        maullar: function () {
+          console.log("Miau Miau (=^-^=)");
+        },
+      };
+
+      console.log(gato);
+      gato.maullar();
+
+      const cat = {
+        name3,
+        edad3,
+        raza: "Amarillo",
+        maullar2() {
+          console.log("Miau Miau (=^-^=) otra vez");
+        },
+      };
+      console.log(cat);
+      cat.maullar2();
+
+      //Parametros REST
+
+      function sum(a, b, ...c) {
+        let resultado = a + b;
+
+        c.forEach(function (n) {
+          resultado += n;
+        });
+        return resultado;
+      }
+
+      console.log(sum(1, 2));
+      console.log(sum(1, 2, 3));
+      console.log(sum(1, 2, 3, 4));
+      console.log(sum(1, 2, 3, 4, 5));
+      console.log(sum(1, 2, 3, 4, 5, 6, 7));
+
+      // Spread operator
+
+      const arr5 = [1, 2, 3, 4, 5],
+        arr6 = [6, 7, 8, 9, 0];
+
+      console.log(arr5, arr6);
+      const arr7 = [...arr5, ...arr6];
+      console.log(arr7);
+
+      //Arrow function
+
+      //Funcion anónima
+      const saludo2 = function () {
+        console.log("Hola");
+      };
+
+      saludo2();
+
+      const saludo3 = () => console.log(`Hola`);
+      saludo3();
+
+      const saludar4 = (nombre) => console.log(`Hola ${nombre}`);
+      saludar4("Esteban");
+
+      const sumar3 = function (a, b) {
+        return a + b;
+      };
+
+      const sumar4 = (a, b) => a + b;
+
+      console.log(sumar4(9, 9));
+
+      const funcionDeVariasLineas = () => {
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+      };
+
+      funcionDeVariasLineas();
+
+      const numeros = [1, 2, 3, 4, 5];
+
+      numeros.forEach((el, index) =>
+        console.log(`${el} esta en la posición ${index}`)
+      );
+
+      function Dog2() {
+        console.log(this);
+      }
+
+      Dog2();
+
+      const dog3 = {
+        name4: "Kenai",
+        ladrar1: function () {
+          console.log(this);
+        },
+        ladrar: () => console.log(this),
+      };
+
+      dog3.ladrar1();
+      dog3.ladrar();
     </script>
   </body>
 </html>
