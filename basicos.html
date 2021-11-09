@@ -82,13 +82,13 @@
       console.log(fullName2);
 
       let ul = `
-       <ul>
-         <li>Primavera</li>
-         <li>Verano</li>
-         <li>Otoño</li>
-         <li>Invierno</li>
-       </ul>
-         `;
+         <ul>
+           <li>Primavera</li>
+           <li>Verano</li>
+           <li>Otoño</li>
+           <li>Invierno</li>
+         </ul>
+           `;
 
       console.log(ul);
 
@@ -443,13 +443,13 @@
 
       //En objetos
       const person = {
-        name: "Esteban",
+        name8: "Esteban",
         lastname: "Alcánatara",
         age: 20,
       };
 
-      let { name, age, lastname } = person;
-      console.log(name, lastname, age);
+      let { name8, age, lastname } = person;
+      console.log(name8, lastname, age);
 
       let name3 = "Javier",
         edad3 = 1;
@@ -555,6 +555,160 @@
 
       dog3.ladrar1();
       dog3.ladrar();
+
+      //      OOP
+      //Prototipos
+      // Un objeto literal:
+      const animal = {
+        nombre9: "Snoopy",
+        sonar() {
+          console.log("Hago sonidos por que estoy vivo");
+        },
+      };
+
+      console.log(animal);
+      //Función constructura:
+
+      // function Animal4(nombre8, genero5) {
+      //   //Atributos
+      //   this.nombre8 = nombre8;
+      //   this.genero5 = genero5;
+
+      //   //Métodos
+      //   this.sonar2 = function () {
+      //     console.log("Hago sonidos por que estoy vivo");
+      //   };
+      //   this.saludar8 = function () {
+      //     console.log(`Me llamo ${this.nombre8}`);
+      //   };
+      // }
+      //    Lo ideal es sacar los métodos de la función constructora, para que mejore el rendimiento de nuestra aplicación ya que no ocuparan ese espacio en memporia
+      function Animal4(nombre8, genero5) {
+        //Atributos
+        this.nombre8 = nombre8;
+        this.genero5 = genero5;
+      }
+      //Métodos
+      Animal4.prototype.sonar2 = function () {
+        console.log("Hago sonidos por que estoy vivo");
+      };
+      Animal4.prototype.saludar8 = function () {
+        console.log(`Me llamo ${this.nombre8}`);
+      };
+
+      //instanciar
+      const snoopy = new Animal4("Snoopy", "Macho"),
+        lolaBunny = new Animal4("Lola Bunny", "Hembra");
+
+      console.log(snoopy);
+      console.log(lolaBunny);
+
+      snoopy.sonar2();
+      snoopy.saludar8();
+      lolaBunny.sonar2();
+      lolaBunny.saludar8();
+
+      //    Herencia Prototípica
+
+      function Perro3(nombere7, genero4, tamanio) {
+        this.super = Animal4;
+        this.super(nombere7, genero4);
+        this.tamanio = tamanio;
+      }
+
+      //Perro esta heredando de animal
+      Perro3.prototype = new Animal4();
+      Perro3.prototype.constructor = Perro3;
+
+      //Sobreescribir métodos del Prototipo padre
+      Perro3.prototype.sonar2 = function () {
+        console.log("Soy un perro y mi sonido es un ladrido");
+      };
+
+      //Metodos del prototipo Perro3
+      Perro3.prototype.ladrar = function () {
+        console.log("Guauuuu Guauuuu !!!");
+      };
+
+      //Instanciando Perro3
+      const hachi = new Perro3("Hachi", "Macho", "Mediano");
+
+      console.log(hachi);
+
+      hachi.sonar2();
+      hachi.saludar8();
+      hachi.ladrar();
+
+      //    CLases
+      class Animal5 {
+        //Atributos
+        constructor(nombre9, genero6) {
+          this.nombre9 = nombre9;
+          this.genero6 = genero6;
+        }
+        //Métodos
+        sonar3() {
+          console.log("Hago sonidos por que estoy vivo");
+        }
+        saludar9() {
+          console.log(`Me llamo ${this.nombre9}`);
+        }
+      }
+
+      const mimi = new Animal5("Mimi", "Hembra"),
+        scooby = new Animal5("Scooby", "Macho");
+      console.log(mimi);
+      mimi.saludar9();
+      mimi.sonar3();
+      console.log(scooby);
+      scooby.saludar9();
+      scooby.sonar3();
+
+      class Perro4 extends Animal5 {
+        constructor(nombre9, genero6, tamanio2) {
+          //el método super() invoca al constructor de la clase padre
+          super(nombre9, genero6);
+          this.tamanio2 = tamanio2;
+          this.raza = null;
+        }
+
+        sonar4() {
+          console.log("Soy unh perro y mi sonido es un ladrido");
+        }
+
+        ladrar2() {
+          console.log("Guauuu Guauuuu!!!!1");
+        }
+        //Métodos estáticos
+        static queEres() {
+          console.log(
+            "Los perros somos animlaes mamiferos que pertenecemos a la familia de los caninos. Somos considerados los mejores amigos del hombre"
+          );
+        }
+        //setters y getters
+        //Se utilizan como si fueran atributos
+
+        get getRaza() {
+          return this.raza;
+        }
+
+        set setRaza(raza) {
+          this.raza = raza;
+        }
+      }
+
+      const scooby2 = new Perro4("Scooby2", "Macho");
+      console.log(scooby);
+      scooby2.saludar9();
+      scooby2.sonar3();
+      scooby2.ladrar2();
+
+      //Métodos estáticos, getters y setters
+
+      Perro4.queEres();
+
+      scooby2.setRaza = "Gran danes";
+      console.log(scooby2.getRaza);
     </script>
   </body>
 </html>
