@@ -82,13 +82,13 @@
       console.log(fullName2);
 
       let ul = `
-         <ul>
-           <li>Primavera</li>
-           <li>Verano</li>
-           <li>Otoño</li>
-           <li>Invierno</li>
-         </ul>
-           `;
+           <ul>
+             <li>Primavera</li>
+             <li>Verano</li>
+             <li>Otoño</li>
+             <li>Invierno</li>
+           </ul>
+             `;
 
       console.log(ul);
 
@@ -709,6 +709,234 @@
 
       scooby2.setRaza = "Gran danes";
       console.log(scooby2.getRaza);
+      console.clear();
+
+      //OBjetos
+      //Console
+
+      console.log(console);
+      console.error("Esto es un error");
+      console.warn("Esto es un aviso");
+      console.info("Esto es un mensaje informativo");
+      console.log("Un registro de lo que ha pasado en nuestra aplicacion");
+
+      let nombre10 = "Esteban",
+        apellido10 = " Alcantara",
+        edad10 = 20;
+
+      console.log(
+        "Hola mi nombes es %s %s y tengo %d años",
+        nombre10,
+        apellido10,
+        edad10
+      );
+      console.clear();
+
+      console.log(window);
+      console.log(document);
+
+      console.dir(window);
+      console.dir(document);
+      console.clear();
+
+      console.group("Cursos para ser FRONTEND ");
+      console.log("HTML Y CSS");
+      console.log("PWAs");
+      console.log("Cursos de Flexbox");
+      console.groupEnd();
+      console.clear();
+
+      console.log(console);
+      console.table(Object.entries(console).sort());
+
+      const numeros7 = [1, 2, 3, 4, 5],
+        vocales = ["a", "e", "i", "o", "u"];
+
+      console.table(numeros);
+      console.table(vocales);
+
+      const perro5 = {
+        nombre11: "Boni",
+        raza11: "Boxer",
+        color11: "cafe",
+      };
+      console.table(perro5);
+
+      console.time("Caunto tiempo tarda mi código");
+      // const arr8 = Array(1000000);
+
+      // for (let i = 0; i < arr8.length; i++) {
+      //   arr8[i] = i;
+      // }
+      console.timeEnd("Caunto tiempo tarda mi código");
+      //console.log(arr8);
+
+      // for (let i = 0; i < 100; i++) {
+      //   console.count("Código for");
+      //   console.log(i);
+      // }
+
+      let x1 = 1,
+        y1 = 2,
+        pruebaXY = "Se espera que X siempre sea menor que Y";
+
+      console.assert(x1 < y1, (x1, y1, pruebaXY));
+      console.clear();
+
+      //Date
+      console.log(Date());
+      let fecha = new Date();
+      //Día del mes
+      console.log(fecha.getDate());
+      //Número del dia, Lun = 1, Mar = 2, ... , Dom = 0
+      console.log(fecha.getDay());
+      console.log(fecha.getMonth());
+      console.log(fecha.getFullYear());
+      console.log(fecha.getHours());
+      console.log(fecha.getMinutes());
+      console.log(fecha.getSeconds());
+      console.log(fecha.getMilliseconds());
+      console.log(fecha.toString());
+      console.log(fecha.toDateString());
+      console.log(fecha.toLocaleString());
+      console.log(fecha.toLocaleDateString());
+      console.log(fecha.toLocaleTimeString());
+      console.log(fecha.getTimezoneOffset());
+      //Fecha del meriadiano 0
+      console.log(fecha.getUTCDate());
+      console.log(fecha.getUTCHours());
+      //Segundos desde 01/01/1970
+      console.log(Date.now());
+      let cumpleEsteban = new Date(2001, 4, 9);
+      console.log(cumpleEsteban);
+
+      console.clear();
+
+      //Math
+
+      console.log(Math);
+      console.log(Math.PI);
+      console.log(Math.abs(-7.8));
+      console.log(Math.ceil(7.2));
+      console.log(Math.floor(7.8));
+      console.log(Math.round(7.49));
+      console.log(Math.sqrt(81));
+      console.log(Math.pow(2, 5));
+      //Negativo, Cero o Positivo:
+      console.log(Math.sign(-0.3)); // -1 0 1
+      //Valor aleatorio entre 0 y 1
+      console.log(Math.random());
+      //Valor aleatorio entre 0 y n
+      console.log(Math.round(Math.random() * 1000));
+
+      console.clear();
+
+      //Operadores de Corto circuito
+
+      function saludarA(nombre20) {
+        nombre20 = nombre20 || "Desconocido";
+        console.log(`Hola ${nombre20}`);
+      }
+      saludarA();
+      saludarA("Esteban");
+
+      console.log("cadena" || "Valor de la derecha");
+      console.log(19 || "Valor de la derecha");
+      console.log(true || "Valor de la derecha");
+      console.log([] || "Valor de la derecha");
+      console.log({} || "Valor de la derecha");
+      console.log(false || "Valor de la derecha");
+      console.log(null || "Valor de la derecha");
+      console.log(undefined || "Valor de la derecha");
+      console.log("" || "Valor de la derecha");
+      console.log(-2 || "Valor de la derecha");
+      console.log(0 || "Valor de la derecha");
+
+      console.log(false && "Valor de la derecha");
+      console.log(null && "Valor de la derecha");
+      console.log(undefined && "Valor de la derecha");
+      console.log("" && "Valor de la derecha");
+      console.log(-2 && "Valor de la derecha");
+      console.log(0 && "Valor de la derecha");
+
+      console.log("cadena" && "Valor de la derecha");
+      console.log(19 && "Valor de la derecha");
+      console.log(true && "Valor de la derecha");
+      console.log([] && "Valor de la derecha");
+      console.log({} && "Valor de la derecha");
+
+      console.clear();
+
+      //alert, confirm y promp
+
+      //console.log(window);
+      //alert("Hola esto es una alerta");
+      //confirm("Hola esto es una confirmación");
+      //prompt("Hola esto es un aviso y le permite al usuario ingresar un valor");
+
+      //let alerta = alert("Hola esto es una alerta"),
+      //confirmacion = confirm("Hola esto es una confirmación"),
+      //aviso = prompt(
+      //"Hola esto es un aviso y le permite al usuario ingresar un valor"
+      //);
+
+      /*
+      console.log(alerta);
+      console.log(confirmacion);
+      console.log(aviso);
+      */
+
+      console.clear();
+
+      //Expresiones regulares
+
+      let cadenaTexto =
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci natus voluptatem maxime, ipsa iusto minima assumenda nisi dolor est commodi molestias vitae lorem voluptate enim unde distinctio quam illo praesentium hic.";
+
+      // parametros de RegExp("patron", "banderas");
+      let expReg = new RegExp("lorem", "ig");
+      let expReg2 = /lorem/gi;
+
+      console.log(expReg.test(cadenaTexto));
+      console.log(expReg.exec(cadenaTexto));
+
+      console.log(expReg2.test(cadenaTexto));
+      console.log(expReg2.exec(cadenaTexto));
+
+      //Función anónima autoejecutable
+
+      (function () {
+        console.log("My FIRST IIFE");
+      })();
+
+      (function (d, w, c) {
+        console.log("My SECOND IIFE");
+        console.log(d);
+        console.log(w);
+        console.log(c);
+        c.log("Este es un console.log");
+      })(document, window, console);
+
+      //Formas de escribir las funciones Anónimas Autoejecutables
+      //Clásica
+      (function () {
+        console.log("versión Clásica");
+      })();
+
+      //La Crockford (JavaScript The Good Parts)
+      (function () {
+        console.log("versión Crockford");
+      })();
+
+      //Unaria
+      +(function () {
+        console.log("versión Unaria");
+      })();
+
+      //Facebook
+      !(function () {
+        console.log("versión Facebook");
+      })();
     </script>
   </body>
 </html>
