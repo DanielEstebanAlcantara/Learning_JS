@@ -63,10 +63,12 @@ xyz3, xyz4 y xyz5", "xyz") devolverá "1, 2, 3, 4 y 5.
 */
 
 const eliminarPatron = (cadena, patron)=> {//recibe una cadena de caracteres y el patron a eliminar
-   let patronExpReg = new RegExp(patron, "g") //Creo una expreson regular del patron con la bandera global
+   let patronExpReg = new RegExp(patron, "ig") //Creo una expreson regular del patron con la bandera global
 
    return (!cadena)//Si se ingresó una cadena vacía
    ? console.warn("No se ha ingresado ningún texto")
+   :(!patron)
+   ?console.warn("No se ha ingresado ningún patron a buscar")
    :console.log(patronEnCadena.replace(patronExpReg, ""))/*función replace para remplzar la 
                                                                expresión regular por nada*/
 }
