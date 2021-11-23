@@ -1,5 +1,6 @@
 /* 5) Programa una función que invierta las palabras de una cadena de texto,
 pe. miFuncion("Hola Mundo") devolverá "odnuM aloH". */ 
+//Pude usar el metodo reverse de arreglos
 const invertirTexto = texto => {
    let textoInvertido =''
    
@@ -22,15 +23,15 @@ const palabraRepetida = (texto, palabra) =>{
    for (let elemento of arrTexto) {if (palabra === elemento) veces +=1}/*Busqueda lineal para ver cuantas 
                                                                            veces se repite la palabra*/
    
-   (!texto)
-   ? console.warn("No se ha ingresado ningún texto")
+   (!texto || !palabra)
+   ? console.warn("No se ha ingresado ningún texto a evaluar")
    :(veces != 0)
    ? console.log(`La palabra "${palabra}" se encuentra ${veces} veces en el texto: \n "${texto}"`) 
    : console.log(`"${palabra}" no se encuentra dentro del siguinte texto: \n "${texto}"`)
 }
 
-texto = 'hola mundo adios mundo'
-palabraRepetida(texto, "mundo")
+let texto2 = 'hola mundo adios mundo'
+palabraRepetida(texto2, "hola")
 
 
 /* 7) Programa una función que valide si una palabra o frase dada, es un
@@ -41,9 +42,8 @@ const palindromo = palabra =>{
    //declaro una variable vacía para llenarla con la frase o palabra invertida
    let palabraInvertida ='',
       //Con las funciones toLowerCase y replace hago que todo se compara en minúsculas y sin espacios
-       palabraMinusculas = palabra.toLowerCase(),
-       palabraAnilzar = palabraMinusculas.replace(/ /g, '')
-   
+       palabraAnilzar = palabra.toLowerCase().replace(/ /g, '')
+       
    for (let i = palabraAnilzar.length-1; i >= 0; i--) {palabraInvertida += palabraAnilzar[i]}
    
    (!palabraAnilzar)//Si se introdujo una cadena vacía 
