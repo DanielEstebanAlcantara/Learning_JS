@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: #dcbd29;
+  background-color: #e4c942;
   color: #191919;
 }
 
@@ -37,6 +37,7 @@ body {
   border-radius: 0.3rem;
   background-color: #191919;
   height: 3.5rem;
+  box-shadow: 1rem 1rem 2rem 0.1rem #0007;
 }
 
 #index a {
