@@ -4,9 +4,9 @@ pe. miFuncion("Hola Mundo") devolverá "odnuM aloH". */
 const invertirTexto = texto => {
    let textoInvertido =''
    
-   for (let i = texto.length-1; i >= 0; i--) {textoInvertido += texto[i]}
+   for (let i = texto.length-1; i >= 0; i--) textoInvertido += texto[i]
    
-   (!texto)
+   return (!texto)
    ? console.warn("No se ha ingresado ningún texto")
    :console.log(textoInvertido)
 }
@@ -20,10 +20,10 @@ texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.*/
 const palabraRepetida = (texto, palabra) =>{
    let arrTexto = texto.split(" "), veces = 0
    
-   for (let elemento of arrTexto) {if (palabra === elemento) veces +=1}/*Busqueda lineal para ver cuantas 
+   for (let elemento of arrTexto) if (palabra === elemento) veces +=1/*Busqueda lineal para ver cuantas 
                                                                            veces se repite la palabra*/
    
-   (!texto || !palabra)
+   return (!texto || !palabra)
    ? console.warn("No se ha ingresado ningún texto a evaluar")
    :(veces != 0)
    ? console.log(`La palabra "${palabra}" se encuentra ${veces} veces en el texto: \n "${texto}"`) 
@@ -40,13 +40,14 @@ mifuncion("Salas") devolverá true.  */
 
 const palindromo = palabra =>{
    //declaro una variable vacía para llenarla con la frase o palabra invertida
+   //invertir una palabra rápido palabraInvertida = palabra.split("").reverse().join("")
    let palabraInvertida ='',
       //Con las funciones toLowerCase y replace hago que todo se compara en minúsculas y sin espacios
        palabraAnilzar = palabra.toLowerCase().replace(/ /g, '')
        
-   for (let i = palabraAnilzar.length-1; i >= 0; i--) {palabraInvertida += palabraAnilzar[i]}
+   for (let i = palabraAnilzar.length-1; i >= 0; i--) palabraInvertida += palabraAnilzar[i]
    
-   (!palabraAnilzar)//Si se introdujo una cadena vacía 
+   return (!palabraAnilzar)//Si se introdujo una cadena vacía 
    ? console.warn("No se ha ingresado ningúna frase o palabra")
    :(palabraInvertida === palabraAnilzar) /*Si no se ingrosó una cadena vacía prueba que la frase o palabra 
                                              invertida sea igual a la palabra o frase que se ingresó*/
@@ -62,9 +63,9 @@ xyz3, xyz4 y xyz5", "xyz") devolverá "1, 2, 3, 4 y 5.
 */
 
 const eliminarPatron = (cadena, patron)=> {//recibe una cadena de caracteres y el patron a eliminar
-   let patronExpReg = new RegExp(patron, "g"); //Creo una expreson regular del patron con la bandera global
+   let patronExpReg = new RegExp(patron, "g") //Creo una expreson regular del patron con la bandera global
 
-   (!cadena)//Si se ingresó una cadena vacía
+   return (!cadena)//Si se ingresó una cadena vacía
    ? console.warn("No se ha ingresado ningún texto")
    :console.log(patronEnCadena.replace(patronExpReg, ""))/*función replace para remplzar la 
                                                                expresión regular por nada*/
